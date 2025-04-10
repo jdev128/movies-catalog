@@ -1,0 +1,46 @@
+nav,
+ul,
+.nav-option {
+  display: flex;
+}
+
+nav {
+    box-shadow: 0 3px 10px hsla(0, 0%, 10%, 0.8);
+}
+
+ul {
+  flex-grow: 1;
+}
+
+#home-icon {
+  height: 50px;
+  margin: 3vmin;
+}
+
+#home-icon {
+  height: 40px;
+  margin: 3vmin;
+  align-self: center;
+  transition: all .5s ease;
+}
+
+#home-icon:hover {
+    transform: scale(1.2);
+    filter: contrast(130%);
+}
+
+.nav-option {
+  list-style-type: none;
+  padding: 0 3vmin;
+  align-items: center;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:not([href]), a[href=""] {
+    cursor: default;
+}

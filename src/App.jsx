@@ -1,13 +1,21 @@
-import './App.css'
+import "./App.css";
+import NavBar from "./components/NavBar";
 
 function App() {
-
   return (
     <>
-      <h1>Welcome to React</h1>
-      <p>This is a simple React app.</p>
+      <NavBar
+        backgroundColor="hsl(161, 20%, 25%)"
+        homeIcon={{ altTitle: "Movies Catalog Home", url: "/favicon.ico" }}
+        options={[
+          {
+            title: "Movies Search App",
+            url: null,
+          },
+        ]}
+      />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
