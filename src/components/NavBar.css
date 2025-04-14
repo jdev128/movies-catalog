@@ -1,46 +1,31 @@
-nav,
-ul,
-.nav-option {
-  display: flex;
-}
-
 nav {
-    box-shadow: 0 3px 10px hsla(0, 0%, 10%, 0.8);
+  display: flex;
+  align-items: stretch;
+  box-shadow: 0 3px 10px hsla(0, 0%, 10%, 0.8);
 }
 
-ul {
+#nav-content {
+  display: flex;
   flex-grow: 1;
 }
 
 #home-icon {
-  height: 50px;
+  height: 45px;
   margin: 3vmin;
+  transition: all 0.5s ease;
 }
 
-#home-icon {
+#menu-icon {
   height: 40px;
-  margin: 3vmin;
   align-self: center;
-  transition: all .5s ease;
+  margin: 3vmin;
 }
 
 #home-icon:hover {
-    transform: scale(1.2);
-    filter: contrast(130%);
+  transform: scale(1.1) rotate(10deg);
+  filter: contrast(120%);
 }
 
-.nav-option {
-  list-style-type: none;
-  padding: 0 3vmin;
-  align-items: center;
-}
-
-a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-a:not([href]), a[href=""] {
-    cursor: default;
+nav>a {
+  display: flex;
 }

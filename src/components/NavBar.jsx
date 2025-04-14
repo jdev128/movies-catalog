@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import "./NavBar.css";
 
-const NavBar = ({ backgroundColor, homeIcon, options, menuIcon }) => {
+const NavBar = ({ backgroundColor, homeIcon, children, menuIcon }) => {
   return (
     <header>
       <nav
@@ -10,14 +10,7 @@ const NavBar = ({ backgroundColor, homeIcon, options, menuIcon }) => {
         <a href="/">
           <img src={homeIcon.url} id="home-icon" alt={homeIcon.altTitle} />
         </a>
-        <ul>
-          {options &&
-            options.map((option) => (
-              <li className="nav-option">
-                <a href={option.url}>{option.title}</a>
-              </li>
-            ))}
-        </ul>
+        <div id="nav-content">{children}</div>
         {menuIcon && (
           <img src={menuIcon.url} id="menu-icon" alt={menuIcon.altTitle} />
         )}
@@ -32,16 +25,11 @@ NavBar.propTypes = {
     altTitle: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
   }).isRequired,
-  options: PropTypes.arrayOf(
-    PropTypes.exact({
-      title: PropTypes.string.isRequired,
-      url: PropTypes.string,
-    })
-  ),
   menuIcon: PropTypes.exact({
     altTitle: PropTypes.string.isRequired,
     url: PropTypes.string,
   }).isRequired,
+  children: PropTypes.element.isRequired,
 };
 
 export default NavBar;

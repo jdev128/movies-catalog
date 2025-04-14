@@ -9,11 +9,13 @@
     "customizations": {
       "vscode": {
         "extensions": [
-            "esbenp.prettier-vscode",
-            "dbaeumer.vscode-eslint",
-            "streetsidesoftware.code-spell-checker-spanish",
-            "dsznajder.es7-react-js-snippets",
-            "GitHub.copilot"
+          "dbaeumer.vscode-eslint",
+          "esbenp.prettier-vscode",
+          "streetsidesoftware.code-spell-checker-spanish",
+          "jock.svg",
+          "dotjoshjohnson.xml",
+          "dsznajder.es7-react-js-snippets",
+          "GitHub.copilot"
         ]
       }
     },

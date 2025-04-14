@@ -1,0 +1,38 @@
+ul {
+  display: flex;
+}
+
+/* TODO: Make collapsable box for mobile devices */
+ul.stacked {
+  flex-direction: column;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+}
+
+li a {
+  cursor: default;
+  display: flex;
+  align-items: center;
+  padding: 5vmin;
+  color: white;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  font-weight: 600;
+}
+
+ul.stacked a {
+  border-radius: 5px;
+}
+
+li a[href]:not([href=""]) {
+  cursor: pointer;
+}
+
+li a[href]:not([href=""]):hover {
+  background-color: hsla(0, 0%, 10%, 0.3);
+}
