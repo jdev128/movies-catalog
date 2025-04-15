@@ -1,9 +1,31 @@
+import { useEffect } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
-import LinkList from "./components/LinkList";
 import SearchField from "./components/SearchField";
+import useFetch from "./hooks/useFetch";
+import TMDBUtils from "./utils/TMDBUtils";
 
 function App() {
+  const { data, isLoading, error, fetchData } = useFetch();
+
+  useEffect(() => {
+    fetchData(
+      `${TMDBUtils.BASE_URL}${
+        TMDBUtils.MOVIE_FILTER_ENDPOINT
+      }?${TMDBUtils.getLastYearPopularMoviesParams()}`,
+      "GET",
+      null,
+      TMDBUtils.getCommonHeaders()
+    );
+  }, []);
+
+  useEffect(() => {
+    if (!data) {
+      return;
+    }
+    console.log(JSON.stringify(data.results));
+  }, [data]);
+
   return (
     <>
       <NavBar
@@ -11,7 +33,7 @@ function App() {
         homeIcon={{ altTitle: "Movies Catalog Home", url: "/favicon.ico" }}
       >
         <SearchField
-          placeholder="Search your next favorite movie"
+          placeholder="Find your next favorite movie"
           onConfirm={function (input) {
             alert(input);
           }}
