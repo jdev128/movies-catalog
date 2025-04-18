@@ -7,8 +7,45 @@ body {
   color: white;
 }
 
+header {
+  position: sticky;
+  z-index: 100;
+  top: 0
+}
+
+main {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 1fr;
+  gap: 5vmin;
+  padding: 5vmin;
+  min-height: calc(100vh - 65px - 5vmin * 2);
+}
+
+.message {
+  font-size: 1.1em;
+  text-align: center;
+  grid-column: span 2;
+}
+
+.error {
+  background-color: rgba(175, 172, 172, 0.774);
+  color: rgb(175, 41, 41);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+@media screen and (min-width: 900px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+    padding: 5vmin 10vmax;
+  }
 }
