@@ -7,7 +7,7 @@ const NavBar = ({ backgroundColor, homeIcon, children, menuIcon }) => {
       <nav
         style={{ backgroundColor: backgroundColor ? backgroundColor : "grey" }}
       >
-        <a href="/">
+        <a>
           <img src={homeIcon.url} id="home-icon" alt={homeIcon.altTitle} />
         </a>
         <div id="nav-content">{children}</div>

@@ -33,16 +33,23 @@ input {
   transform: scale(1.03);
 }
 
-:is(.search-field:focus,
-.search-field:hover,
-.search-field:has(input:focus)) input {
-    border: 1px solid hsl(162, 73%, 46%);
-    box-shadow: 3px 3px 10px hsla(0, 0%, 50%, 0.6);
+:is(.search-field:focus, .search-field:hover, .search-field:has(input:focus))
+  input {
+  border: 1px solid hsl(162, 73%, 46%);
+  box-shadow: 3px 3px 10px hsla(0, 0%, 50%, 0.6);
 }
 
 #search-icon {
   width: 20px;
   position: absolute;
   right: 15px;
-  top: calc(50% - 20px / 2)
+  top: calc(50% - 20px / 2);
+}
+
+#empty-icon {
+  width: 20px;
+  position: absolute;
+  right: 15px;
+  top: calc(50% - 20px / 2);
+  cursor: pointer;
 }
