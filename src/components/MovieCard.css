@@ -54,6 +54,11 @@ img.poster,
   margin-right: 5px;
 }
 
+.movie-title, .movie-description, .description-tooltip {
+  cursor: default;
+  user-select: none;
+}
+
 .movie-description {
   font-size: 0.9em;
   line-height: 1.4em;
@@ -88,15 +93,16 @@ img.poster,
   color: white;
 }
 
+p.description-tooltip.upper {
+  top: calc(attr(data-y-offset px) - 20px);
+}
+
 .movie-description:hover + p.description-tooltip {
   display: block;
 }
 
-.movie-description:hover + p.description-tooltip.upper {
-  top: calc(attr(data-y-offset px) - 20px);
-}
-
 /* TODO: Dynamic pointer/triangle on tooltip following cursor position.
+** TODO: Refactor tooltip for touch devices (chrome, firefox)
 */
 
 /*
