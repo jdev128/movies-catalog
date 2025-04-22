@@ -5,20 +5,20 @@ import searchIcon from "../assets/icons8-search.svg";
 import emptyIcon from "../assets/bx-x-circle.svg";
 
 const SearchField = ({ placeholder, onConfirm }) => {
-
   const input = useRef();
   const [searchInput, setSearchInput] = useState("");
 
   const emptySearchInput = () => {
-      setSearchInput("");
-      input.current.focus();
-  }
+    setSearchInput("");
+    input.current.focus();
+  };
 
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        searchInput.trim().length > 0 && onConfirm(searchInput.trim());
+        input.current.blur();
+        onConfirm(searchInput.trim());
       }}
     >
       <div className="search-field">
@@ -32,11 +32,7 @@ const SearchField = ({ placeholder, onConfirm }) => {
           }}
         />
         {searchInput.trim().length > 0 ? (
-          <img
-            src={emptyIcon}
-            id="empty-icon"
-            onClick={emptySearchInput}
-          />
+          <img src={emptyIcon} id="empty-icon" onClick={emptySearchInput} />
         ) : (
           <img src={searchIcon} id="search-icon"></img>
         )}

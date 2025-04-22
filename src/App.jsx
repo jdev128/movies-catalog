@@ -9,18 +9,7 @@ import MovieAPIUtils from "./utils/MovieAPIUtils";
 function App() {
   const { data, isLoading, error, fetchData } = useFetch();
 
-  const searchMovies = (query) => {
-    fetchData(
-      `${MovieAPIUtils.BASE_URL}${
-        MovieAPIUtils.MOVIE_FIND_ENDPOINT
-      }?${MovieAPIUtils.getSearchParams(query)}`,
-      "GET",
-      null,
-      MovieAPIUtils.getCommonHeaders()
-    );
-  };
-
-  useEffect(() => {
+  const getDefaultMovies = () => {
     fetchData(
       `${MovieAPIUtils.BASE_URL}${
         MovieAPIUtils.MOVIE_FILTER_ENDPOINT
@@ -29,6 +18,25 @@ function App() {
       null,
       MovieAPIUtils.getCommonHeaders()
     );
+  }
+
+  const searchMovies = (query) => {
+    if (query) {
+      fetchData(
+        `${MovieAPIUtils.BASE_URL}${
+          MovieAPIUtils.MOVIE_FIND_ENDPOINT
+        }?${MovieAPIUtils.getSearchParams(query)}`,
+        "GET",
+        null,
+        MovieAPIUtils.getCommonHeaders()
+      );
+    } else {
+      getDefaultMovies();
+    }
+  };
+
+  useEffect(() => {
+    getDefaultMovies();
   }, []);
 
   useEffect(() => {
